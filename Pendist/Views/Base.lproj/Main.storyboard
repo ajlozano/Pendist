@@ -9,7 +9,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pendist-->
+        <!--Categories-->
+        <scene sceneID="RhM-dZ-nf8">
+            <objects>
+                <tableViewController id="goZ-pB-ZGn" customClass="CategoryTableViewController" customModule="Pendist" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="NYu-8n-WdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" translatesAutoresizingMaskIntoConstraints="NO" id="pru-wE-EwQ">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pru-wE-EwQ" id="gIw-VE-EaC">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="goZ-pB-ZGn" id="vAf-81-KkK"/>
+                            <outlet property="delegate" destination="goZ-pB-ZGn" id="AOm-kY-FBo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Categories" id="Qct-LE-4DX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="q11-B2-5CA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="AddCategoryPressed:" destination="goZ-pB-ZGn" id="akd-RC-1lh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Y9y-70-HCi" kind="show" identifier="goToItem" id="wE2-aQ-YFU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4iK-vB-IER" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2457" y="-35"/>
+        </scene>
+        <!--Items-->
         <scene sceneID="faX-bH-hej">
             <objects>
                 <tableViewController id="Y9y-70-HCi" customClass="TodoListViewController" customModule="Pendist" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,7 +65,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoListItemCell" id="sca-YU-QlR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="sca-YU-QlR">
                                 <rect key="frame" x="0.0" y="94" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sca-YU-QlR" id="GLb-oO-kwZ">
@@ -40,7 +79,7 @@
                             <outlet property="delegate" destination="Y9y-70-HCi" id="wch-Pu-1Ha"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pendist" id="Xjn-th-EjV">
+                    <navigationItem key="navigationItem" title="Items" id="Xjn-th-EjV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Opj-d9-M6a">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -51,7 +90,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zew-Np-UlI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648.0916030534349" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="3189" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KKz-8G-2yE">
@@ -68,9 +107,7 @@
                         </textAttributes>
                         <navigationBarAppearance key="standardAppearance">
                             <color key="backgroundColor" name="AccentColor"/>
-                            <textAttributes key="titleTextAttributes">
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </textAttributes>
+                            <textAttributes key="titleTextAttributes"/>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
                             <color key="backgroundColor" name="AccentColor"/>
@@ -85,7 +122,7 @@
                         <toolbarAppearance key="standardAppearance"/>
                     </toolbar>
                     <connections>
-                        <segue destination="Y9y-70-HCi" kind="relationship" relationship="rootViewController" id="tDs-5Y-nVa"/>
+                        <segue destination="goZ-pB-ZGn" kind="relationship" relationship="rootViewController" id="eZl-ru-RAJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJC-zk-heZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
