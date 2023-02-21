@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25B3A3E2C166FCC4B14C53ED /* Pods_Pendist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54ECC0336BE85D7EFD3F30B1 /* Pods_Pendist.framework */; };
 		AD975A3B299580D40050EA41 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD975A3A299580D40050EA41 /* CategoryTableViewController.swift */; };
+		ADC64E4129A4061100A2175F /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC64E4029A4061100A2175F /* SwipeTableViewController.swift */; };
 		ADD0C78E29925B17002FE2A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD0C78D29925B17002FE2A2 /* AppDelegate.swift */; };
 		ADD0C79029925B17002FE2A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD0C78F29925B17002FE2A2 /* SceneDelegate.swift */; };
 		ADD0C79229925B17002FE2A2 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD0C79129925B17002FE2A2 /* TodoListViewController.swift */; };
 		ADD0C79529925B17002FE2A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD0C79329925B17002FE2A2 /* Main.storyboard */; };
 		ADD0C79729925B18002FE2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD0C79629925B18002FE2A2 /* Assets.xcassets */; };
 		ADD0C79A29925B18002FE2A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD0C79829925B18002FE2A2 /* LaunchScreen.storyboard */; };
-		ADD4C6D8299ED6370022AE56 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = ADD4C6D7299ED6370022AE56 /* Realm */; };
-		ADD4C6DA299ED6370022AE56 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ADD4C6D9299ED6370022AE56 /* RealmSwift */; };
 		ADEEB3AC299FD0710053ED2B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB3AB299FD0710053ED2B /* Category.swift */; };
 		ADEEB3AE299FD07A0053ED2B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB3AD299FD07A0053ED2B /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54ECC0336BE85D7EFD3F30B1 /* Pods_Pendist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pendist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58F50F935366B32CB0871E49 /* Pods-Pendist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pendist.release.xcconfig"; path = "Target Support Files/Pods-Pendist/Pods-Pendist.release.xcconfig"; sourceTree = "<group>"; };
+		71CE82F018F8F0C199C6A680 /* Pods-Pendist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pendist.debug.xcconfig"; path = "Target Support Files/Pods-Pendist/Pods-Pendist.debug.xcconfig"; sourceTree = "<group>"; };
 		AD975A3A299580D40050EA41 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		ADC64E4029A4061100A2175F /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		ADD0C78A29925B17002FE2A2 /* Pendist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pendist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD0C78D29925B17002FE2A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADD0C78F29925B17002FE2A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,14 +43,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADD4C6DA299ED6370022AE56 /* RealmSwift in Frameworks */,
-				ADD4C6D8299ED6370022AE56 /* Realm in Frameworks */,
+				25B3A3E2C166FCC4B14C53ED /* Pods_Pendist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A366CB12DBB46BC42FA2B721 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71CE82F018F8F0C199C6A680 /* Pods-Pendist.debug.xcconfig */,
+				58F50F935366B32CB0871E49 /* Pods-Pendist.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AD975A362993F9FC0050EA41 /* SuportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +71,8 @@
 			children = (
 				ADD0C78C29925B17002FE2A2 /* Pendist */,
 				ADD0C78B29925B17002FE2A2 /* Products */,
+				A366CB12DBB46BC42FA2B721 /* Pods */,
+				FA078C999F7193FEB855B99E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,8 +122,17 @@
 			children = (
 				AD975A3A299580D40050EA41 /* CategoryTableViewController.swift */,
 				ADD0C79129925B17002FE2A2 /* TodoListViewController.swift */,
+				ADC64E4029A4061100A2175F /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA078C999F7193FEB855B99E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54ECC0336BE85D7EFD3F30B1 /* Pods_Pendist.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,19 +142,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADD0C79E29925B18002FE2A2 /* Build configuration list for PBXNativeTarget "Pendist" */;
 			buildPhases = (
+				1A34D7E41C81D7EE4889F0F3 /* [CP] Check Pods Manifest.lock */,
 				ADD0C78629925B17002FE2A2 /* Sources */,
 				ADD0C78729925B17002FE2A2 /* Frameworks */,
 				ADD0C78829925B17002FE2A2 /* Resources */,
+				33095B440E7B5660C3838C28 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Pendist;
-			packageProductDependencies = (
-				ADD4C6D7299ED6370022AE56 /* Realm */,
-				ADD4C6D9299ED6370022AE56 /* RealmSwift */,
-			);
 			productName = Pendist;
 			productReference = ADD0C78A29925B17002FE2A2 /* Pendist.app */;
 			productType = "com.apple.product-type.application";
@@ -160,9 +181,6 @@
 				Base,
 			);
 			mainGroup = ADD0C78129925B17002FE2A2;
-			packageReferences = (
-				ADD4C6D6299ED6370022AE56 /* XCRemoteSwiftPackageReference "realm-swift" */,
-			);
 			productRefGroup = ADD0C78B29925B17002FE2A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -185,6 +203,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A34D7E41C81D7EE4889F0F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pendist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33095B440E7B5660C3838C28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pendist/Pods-Pendist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pendist/Pods-Pendist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pendist/Pods-Pendist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ADD0C78629925B17002FE2A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -193,6 +253,7 @@
 				AD975A3B299580D40050EA41 /* CategoryTableViewController.swift in Sources */,
 				ADD0C79229925B17002FE2A2 /* TodoListViewController.swift in Sources */,
 				ADD0C78E29925B17002FE2A2 /* AppDelegate.swift in Sources */,
+				ADC64E4129A4061100A2175F /* SwipeTableViewController.swift in Sources */,
 				ADEEB3AE299FD07A0053ED2B /* Item.swift in Sources */,
 				ADD0C79029925B17002FE2A2 /* SceneDelegate.swift in Sources */,
 				ADEEB3AC299FD0710053ED2B /* Category.swift in Sources */,
@@ -271,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -325,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -337,6 +398,7 @@
 		};
 		ADD0C79F29925B18002FE2A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71CE82F018F8F0C199C6A680 /* Pods-Pendist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -350,7 +412,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,6 +428,7 @@
 		};
 		ADD0C7A029925B18002FE2A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58F50F935366B32CB0871E49 /* Pods-Pendist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -379,7 +442,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,30 +478,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		ADD4C6D6299ED6370022AE56 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.11.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		ADD4C6D7299ED6370022AE56 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ADD4C6D6299ED6370022AE56 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		ADD4C6D9299ED6370022AE56 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ADD4C6D6299ED6370022AE56 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADD0C78229925B17002FE2A2 /* Project object */;
 }

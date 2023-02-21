@@ -8,11 +8,12 @@
 import UIKit
 import CoreData
 import RealmSwift
+import SwipeCellKit
+import ChameleonFramework
 
-class CategoryTableViewController: UITableViewController {
-    
+class CategoryTableViewController: SwipeTableViewController {
+
     let realm = try! Realm()
-
     var categories: Results<Category>?
     
     override func viewDidLoad() {
@@ -21,22 +22,9 @@ class CategoryTableViewController: UITableViewController {
         loadCategories()
     }
     
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories?.count ?? 1
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-    
-        cell.textLabel?.text = categories?[indexPath.row].name ?? "No categories added"
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToItem", sender: self)
+    override func viewWillAppear(_ animated: Bool) {
+        guard let navBar = navigationController?.navigationBar else { fatalError("Navigatiopn controller does not exist")}
+        navBar.backgroundColor = UIColor.flatRed()
     }
     
     // MARK: - Storage using CoreData
@@ -71,6 +59,7 @@ class CategoryTableViewController: UITableViewController {
             
             let newCategory = Category()
             newCategory.name = categoryTextField.text!
+            newCategory.colour = UIColor.randomFlat().hexValue()
             
             self.save(category: newCategory)
         }
@@ -84,14 +73,50 @@ class CategoryTableViewController: UITableViewController {
         present(alert, animated: true, completion:  nil)
     }
 
+    // MARK: - Table view data source
+ 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categories?.count ?? 1
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "No categories added"
+        
+        if let category = categories?[indexPath.row] {
+            guard let categoryColour = UIColor(hexString: category.colour) else { fatalError()}
+            cell.backgroundColor = categoryColour
+            cell.textLabel?.textColor = ContrastColorOf(categoryColour, returnFlat: true)
+        }
+        return cell
+    }
+    
+    override func updateModel(at indexPath: IndexPath) {
+        if let categoryForDeletion = categories?[indexPath.row] {
+            do {
+                try realm.write {
+                    realm.delete(categoryForDeletion)
+                }
+            } catch {
+                print("Error deleting category, \(error)")
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToItem", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! TodoListViewController
-
         if let indexPath = tableView.indexPathForSelectedRow {
             destinationVC.selectedCategory = categories?[indexPath.row]
         }
     }
 }
+
