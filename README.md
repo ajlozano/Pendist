@@ -3,7 +3,7 @@
 
 <p><img src="https://github.com/ajlozano/Portfolio/blob/main/media/Pendist/Pendist.gif?raw=true" alt="Pendist GIF" align="right" width="270"/></p>
 
-**Pendist** is a task management app developed using persistent data with **Realm**. 
+**Pendist** is a task management app developed with persistent data using **Realm**. 
 Managed with **Chameleon** and **SwiftCellKit** frameworks, items could be sorted by random color palettes and soft animations.
 
 
@@ -22,7 +22,6 @@ Managed with **Chameleon** and **SwiftCellKit** frameworks, items could be sorte
 ### 🚀 Platform
 - iOS
 
-<br/><br/>
 <br/><br/>
 
 <p align="center">
